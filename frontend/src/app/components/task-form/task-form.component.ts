@@ -2,11 +2,15 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TaskService } from '../../service/task-service.service';
 import { Task } from '../../model/task';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-task-form',
   templateUrl: './task-form.component.html',
-  styleUrls: ['./task-form.component.css']
+  styleUrls: ['./task-form.component.css'],
+  imports: [FormsModule],
+  standalone: true,
 })
 export class TaskFormComponent {
 
@@ -20,7 +24,9 @@ export class TaskFormComponent {
   }
 
   onSubmit() {
-    this.taskService.save(this.task).subscribe(result => this.gotoTaskList());
+    this.taskService.save(this.task).subscribe(_result => {
+      console.log(_result)
+    });
   }
 
   gotoTaskList() {

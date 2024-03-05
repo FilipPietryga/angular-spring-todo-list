@@ -1,11 +1,11 @@
-<div>
-  <h2>{{ title }}</h2>
-  <ul>
-    <li>
-      <a routerLink='/tasks'>List Tasks</a>
+<div class="app">
+  <h1>{{ title }}</h1>
+  <ul class="list">
+    <li class="element">
+      <a class="anchor" routerLink='/tasks'>List Tasks</a>
     </li>
-    <li>
-      <a routerLink='/addTasks'>Add a Task</a>
+    <li class="element">
+      <a class="anchor" routerLink='/addTasks'>Add a Task</a>
     </li>
   </ul>
   <router-outlet></router-outlet>
